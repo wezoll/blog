@@ -1,0 +1,119 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #f8f9fa;
+}
+
+.logo {
+    height: 40px;
+}
+
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #007bff;
+
+
+}
+
+.post {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.post:hover {
+    transform: scale(1.02);
+}
+
+.post h2 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.post p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.post small {
+    display: block;
+    color: #777;
+    margin-top: 10px;
+}
+
+.post a {
+    display: inline-block;
+    padding: 6px 12px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.post a:hover {
+    background: #0056b3;
+}
+
+/* Стили для полей ввода */
+input, textarea {
+    width: 40%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+/* При фокусе изменяем цвет границы */
+input:focus, textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Стили для кнопок */
+button {
+    background-color: #007bffc2;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>{{ post[1] }}</h2>
+    <p><strong>Автор:</strong> {{ post[3] }} {{ post[4] }}</p>
+    <p><strong>Дата публикации:</strong> {{ post[5] }}</p>
+    <p>{{ post[2] }}</p>
+    <a href="{{ url_for('home') }}" class="btn btn-secondary">Назад</a>
+</div>
+{% if current_user.is_authenticated and (current_user.id == post[0] or current_user.role == 'admin') %}
+    <a href="{{ url_for('edit_post', post_id=post[0]) }}" class="btn btn-warning">Редактировать</a>
+    <form action="{{ url_for('delete_post', post_id=post[0]) }}" method="post" style="display:inline;">
+        <button type="submit" class="btn btn-danger">Удалить</button>
+    </form>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Профиль - {{ user.first_name }} {{ user.last_name }}{% endblock %}
+
+{% block content %}
+    <h1>Профиль пользователя</h1>
+    <p><strong>Имя:</strong> {{ user.first_name }}</p>
+    <p><strong>Фамилия:</strong> {{ user.last_name }}</p>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+
+    <a href="{{ url_for('edit_profile') }}" class="btn btn-primary">Редактировать профиль</a>
+
+    <h2>Мои посты</h2>
+    {% if posts %}
+    {% for post in posts %}
+        <div class="post">
+            <h2>{{ post[1] }}</h2>
+            <p>{{ post[2] }}</p>
+            <small>Опубликовано: {{ post[3] }}</small>
+            <a href="{{ url_for('edit_post', post_id=post[0]) }}">Редактировать</a>
+            <a href="{{ url_for('delete_post', post_id=post[0]) }}">Удалить</a>
+        </div>
+    {% endfor %}
+{% else %}
+    <p>У вас пока нет постов.</p>
+{% endif %}
+
+{% endblock %}
